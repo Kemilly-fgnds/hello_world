@@ -11,22 +11,33 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/atividades")
 public class AtividadesController {
 
-	List<String> lista = new ArrayList<>();
-
 	@GetMapping("/hello")
 	public String helloWorld() {
 		return "Hello World!";
 	}
 
 	@GetMapping("/bsms")
-	public List<String> bsms() {
-		return List.of("Mentalidades:", "Orientação ao Futuro", "Orientação ao Detalhe", "Responsabilidade Pessoal",
-				"Mentalidade de Crescimento", "Habilidades:", "Comunicação", "Proatividade", "Persistência",
-				"Trabalho em Equipe");
-	}
+    public List<String> bsms() {
+        List<String> lista = new ArrayList<>();
+        lista.add("Mentalidades:");
+        lista.add("Orientação ao Futuro");
+        lista.add("Orientação ao Detalhe");
+        lista.add("Responsabilidade Pessoal");
+        lista.add("Mentalidade de Crescimento");
+        lista.add("Habilidades:");
+        lista.add("Comunicação");
+        lista.add("Proatividade");
+        lista.add("Persistência");
+        lista.add("Trabalho em Equipe");
+        return lista;
+    }
 
-	@GetMapping("/aprendizado")
-	public List<String> aprendizadoSemanal() {
-		return List.of("MySQL", "TCP/IP", "Framework Spring");
+    @GetMapping("/aprendizado")
+    public List<String> aprendizadoSemanal() {
+        List<String> lista = new ArrayList<>();
+        lista.add("MySQL");
+        lista.add("TCP/IP");
+        lista.add("Framework Spring");
+        return lista;
 	}
 }
